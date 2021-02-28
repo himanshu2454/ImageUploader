@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewBag.Heading</h1>
+    <p>.Net Core Backend Application for Uploading Image.</p>
+</div>
+
+
+
+<div class="text-center jumbotron">
+
+    <div class="container">
+        <h5>Please Upload Image below</h5>
+    </div>
+
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+
+    @*
+        If upload succeeded we will show nice message to user.
+    *@
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success" style="margin-top:20px">
+            @ViewBag.Message
+        </div>
+    }
+
+    <p>Visit Below link to check uploaded files.</p>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ImageInventory">ImageInventory</a>
+
+</div>
+
+

@@ -1,0 +1,41 @@
+﻿<div class="text-center">
+    <h1 class="display-4">ImageInvetory</h1>
+    <p>Requirement - 2</p>
+    <p>Inventory of Time sorted file With Search option.</p>
+</div>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by Employee Name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                TimeAdded
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.ImageList)
+        {
+            <tr>
+                <td>
+                    @item.ImageName
+                </td>
+                <td>
+                    @item.TimeAdded
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>
